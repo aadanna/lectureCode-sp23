@@ -4,10 +4,30 @@ package lec7_lists4.DIY;
  *  in case you want to try to figure out how to write it yourself.
  *  After writing your methods, you can run the AListTest file.
  */
+
+int size;
+int item;
+Node next;
+Node prev;
+Node sentinel;
+
+
 public class AList {
     /** Creates an empty list. */
-    public AList() {
+    private Node(Node before, int thingy, Node after) {
+
+        this.next = after;
+        this.item = thingy;
+        this.prev = before;
+        
     }
+    
+    
+    public AList() {
+        size = 0;
+        sentinel = new Node(sentinel, -1, sentinel);
+    }
+    
 
     /** Inserts X into the back of the list. */
     public void addLast(int x) {
@@ -24,7 +44,7 @@ public class AList {
 
     /** Returns the number of items in the list. */
     public int size() {
-        return 0;        
+        return this.size;        
     }
 
     /** Deletes item from back of the list and
